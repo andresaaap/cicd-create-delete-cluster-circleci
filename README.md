@@ -1,6 +1,6 @@
 # Pipeline to create and delete AWS EKS cluster using CircleCI
 
-This is a simple pipeline using CircleCI. The idea is to be able to create a cluster in the cloud without having to install everything in a local machine
+This is a simple pipeline using CircleCI. The idea is to be able to create a cluster in the cloud without having to install everything in a local machine, then use it for 9 minutes and then it automatically deletes it
 
 
 ### Requirements
