@@ -18,12 +18,12 @@ jobs:
           nodes-max: 2
           ssh-access: false
           ssh-public-key: ''
-  delay-30-minutes:
+  delay:
     executor: aws-eks/python3
     steps:
       - run:
           command: |
-            sleep 1800
+            sleep 540
           name: Delay cluster deletion
 orbs:
   aws-eks: circleci/aws-eks@0.2.3
@@ -34,10 +34,10 @@ workflows:
     jobs:
       - create-small-cluster:
           cluster-name: eks-demo-deployment
-      - delay-30-minutes:
+      - delay:
           requires:
             - create-small-cluster
       - aws-eks/delete-cluster:
           cluster-name: eks-demo-deployment
           requires:
-            - delay-30-minutes
+            - delay
