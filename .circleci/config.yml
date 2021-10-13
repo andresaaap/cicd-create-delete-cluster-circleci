@@ -29,7 +29,7 @@ jobs:
       - run:
           name: Install the eksctl tool
           command: |
-            eksctl create cluster --name eks-demo-deployment --version 1.21 --nodegroup-name linux-nodes --node-type t2.small --nodes 2 --nodes-min 1 --nodes-max 3 --region us-west-2 --managed
+            eksctl create cluster --name eks-demo-deployment --version 1.21 --nodegroup-name linux-nodes --node-type t2.small --nodes 2 --nodes-min 1 --nodes-max 3 --managed
   delay:
     executor: aws-eks/python3
     steps:
